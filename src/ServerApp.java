@@ -1,7 +1,7 @@
-import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.text.Normalizer;
+import java.util.*;
 
 public class ServerApp {
     private static final int SERVER_PORT = 12345;

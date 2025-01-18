@@ -8,7 +8,7 @@ public class NamedEntity {
     private String type;
 
     public NamedEntity(String entRoNom, String entRoAcc, String entRoGen,
-                       String entRoDat, String entEnGender, int cityRef, String type) {
+            String entRoDat, String entEnGender, int cityRef, String type) {
         this.entRoNom = entRoNom;
         this.entRoAcc = entRoAcc;
         this.entRoGen = entRoGen;
@@ -28,10 +28,9 @@ public class NamedEntity {
 
     public String getAllAttributes() {
         return String.format(
-            "ent_ro_nom=%s | ent_ro_acc=%s | ent_ro_gen=%s | ent_ro_dat=%s "
-          + "| ent_en_gender=%s | city_ref=%d | type=%s",
-            entRoNom, entRoAcc, entRoGen, entRoDat,
-            entEnGender, cityRef, type
-        );
+                "ent_ro_nom=%s | ent_ro_acc=%s | ent_ro_gen=%s | ent_ro_dat=%s "
+                        + "| ent_en_gender=%s | city_ref=%d | type=%s",
+                entRoNom, entRoAcc, entRoGen, entRoDat,
+                entEnGender, cityRef, type);
     }
 }
