@@ -3,16 +3,18 @@ public class NamedEntity {
     private String entRoAcc;
     private String entRoGen;
     private String entRoDat;
+    private String entRoVoc; // New field for vocative case
     private String entEnGender;
     private int cityRef;
     private String type;
 
     public NamedEntity(String entRoNom, String entRoAcc, String entRoGen,
-            String entRoDat, String entEnGender, int cityRef, String type) {
+            String entRoDat, String entRoVoc, String entEnGender, int cityRef, String type) {
         this.entRoNom = entRoNom;
         this.entRoAcc = entRoAcc;
         this.entRoGen = entRoGen;
         this.entRoDat = entRoDat;
+        this.entRoVoc = entRoVoc;
         this.entEnGender = entEnGender;
         this.cityRef = cityRef;
         this.type = type;
@@ -28,9 +30,9 @@ public class NamedEntity {
 
     public String getAllAttributes() {
         return String.format(
-                "ent_ro_nom=%s | ent_ro_acc=%s | ent_ro_gen=%s | ent_ro_dat=%s "
-                        + "| ent_en_gender=%s | city_ref=%d | type=%s",
-                entRoNom, entRoAcc, entRoGen, entRoDat,
+                "ent_ro_nom=%s | ent_ro_acc=%s | ent_ro_gen=%s | ent_ro_dat=%s | ent_ro_voc=%s | "
+                        + "ent_en_gender=%s | city_ref=%d | type=%s",
+                entRoNom, entRoAcc, entRoGen, entRoDat, entRoVoc,
                 entEnGender, cityRef, type);
     }
 }

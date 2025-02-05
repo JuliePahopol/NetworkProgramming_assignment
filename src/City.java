@@ -4,18 +4,20 @@ public class City {
     private String cityRoAcc;
     private String cityRoGen;
     private String cityRoDat;
+    private String cityRoVoc; // New field for vocative case
     private String cityEnGender;
     private String cityEnNom;
     private String cityState;
 
-    // Constructor to match the required parameters
+    // Updated constructor to include vocative case
     public City(int ref, String cityRoNom, String cityRoAcc, String cityRoGen,
-            String cityRoDat, String cityEnGender, String cityEnNom, String cityState) {
+            String cityRoDat, String cityRoVoc, String cityEnGender, String cityEnNom, String cityState) {
         this.ref = ref;
         this.cityRoNom = cityRoNom;
         this.cityRoAcc = cityRoAcc;
         this.cityRoGen = cityRoGen;
         this.cityRoDat = cityRoDat;
+        this.cityRoVoc = cityRoVoc;
         this.cityEnGender = cityEnGender;
         this.cityEnNom = cityEnNom;
         this.cityState = cityState;
@@ -32,8 +34,8 @@ public class City {
 
     public String getAllAttributes() {
         return String.format(
-                "ref=%d | city_ro_nom=%s | city_ro_acc=%s | city_ro_gen=%s | city_ro_dat=%s | "
+                "ref=%d | city_ro_nom=%s | city_ro_acc=%s | city_ro_gen=%s | city_ro_dat=%s | city_ro_voc=%s | "
                         + "city_en_gender=%s | city_en_nom=%s | city_state=%s",
-                ref, cityRoNom, cityRoAcc, cityRoGen, cityRoDat, cityEnGender, cityEnNom, cityState);
+                ref, cityRoNom, cityRoAcc, cityRoGen, cityRoDat, cityRoVoc, cityEnGender, cityEnNom, cityState);
     }
 }

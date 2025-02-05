@@ -1,12 +1,13 @@
-Teatrul^Mihai Eminescu#Teatrul^Mihai Eminescu#Teatrului^Mihai Eminescu#Teatrului^Mihai Eminescu#neuter#1#Sights
-Universitatea^de Stat din Moldova#Universitatea^de Stat din Moldova#Universității^de Stat din Moldova#Universității^de Stat din Moldova#feminine#1#Universities
-Fabrica^de Vinuri Cricova#Fabrica^de Vinuri Cricova#Fabricii^de Vinuri Cricova#Fabricii^de Vinuri Cricova#feminine#1#Businesses
-
-Aeroportul^Internațional Bălți#Aeroportul^Internațional Bălți#Aeroportului^Internațional Bălți#Aeroportului^Internațional Bălți#masculine#2#Airports
-Muzeul^de Istorie Bălți#Muzeul^de Istorie Bălți#Muzeului^de Istorie Bălți#Muzeului^de Istorie Bălți#neuter#2#Museums
-
-Spitalul^Raional Cahul#Spitalul^Raional Cahul#Spitalului^Raional Cahul#Spitalului^Raional Cahul#neuter#3#Hospitals
-
-Parcul^Central Bălți#Parcul^Central Bălți#Parcului^Central Bălți#Parcului^Central Bălți#neuter#2#Sights
-Monumentul^Eroilor Bălți#Monumentul^Eroilor Bălți#Monumentului^Eroilor Bălți#Monumentului^Eroilor Bălți#neuter#2#Sights
-
+Teatrul Național „Vasile Alecsandri”#Teatrul Național „Vasile Alecsandri”#Teatrului Național „Vasile Alecsandri”#Teatrului Național „Vasile Alecsandri”#Teatrule Național „Vasile Alecsandri”#masculin#2#Sights
+Piața Independenței#Piața Independenței#Pieței Independenței#Pieței Independenței#Piațo Independenței#feminin#2#Sights
+Muzeul Orașului Bălți#Muzeul Orașului Bălți#Muzeului Orașului Bălți#Muzeului Orașului Bălți#Muzeule Orașului Bălți#masculin#2#Sights
+Parcul Andrieș#Parcul Andrieș#Parcului Andrieș#Parcului Andrieș#Parcule Andrieș#masculin#2#Sights
+Cetatea Bender#Cetatea Bender#Cetății Bender#Cetății Bender#Cetateo Bender#feminin#9#Sights
+Memorialul Gloriei Militare#Memorialul Gloriei Militare#Memorialului Gloriei Militare#Memorialului Gloriei Militare#Memorialule Gloriei Militare#masculin#9#Sights
+Catedrala Transfigurării#Catedrala Transfigurării#Catedralei Transfigurării#Catedralei Transfigurării#Catedraleo Transfigurării#feminin#9#Sights
+Plaja Râului Nistru#Plaja Râului Nistru#Plajei Râului Nistru#Plajei Râului Nistru#Plajo Râului Nistru#feminin#9#Sights
+Parcul Orașului Bender#Parcul Orașului Bender#Parcului Orașului Bender#Parcului Orașului Bender#Parcule Orașului Bender#masculin#9#Sights
+Parcul Victoriei#Parcul Victoriei#Parcului Victoriei#Parcului Victoriei#Parcule Victoriei#masculin#10#Sights
+Catedrala Ortodoxă Rîbnița#Catedrala Ortodoxă Rîbnița#Catedralei Ortodoxe Rîbnița#Catedralei Ortodoxe Rîbnița#Catedraleo Ortodoxe Rîbnița#feminin#10#Sights
+Monumentul Eliberatorilor#Monumentul Eliberatorilor#Monumentului Eliberatorilor#Monumentului Eliberatorilor#Monumentule Eliberatorilor#masculin#10#Sights
+Muzeul de Istorie și Etnografie Rîbnița#Muzeul de Istorie și Etnografie Rîbnița#Muzeului de Istorie și Etnografie Rîbnița#Muzeului de Istorie și Etnografie Rîbnița#Muzeule de Istorie și Etnografie Rîbnița#masculin#10#Sights

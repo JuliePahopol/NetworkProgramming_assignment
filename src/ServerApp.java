@@ -9,11 +9,8 @@ public class ServerApp {
     private static ArrayList<NamedEntity> ALE = new ArrayList<>();
 
     public static void main(String[] args) {
-        // 1. Load data from files
         loadCities("data/cities.txt");
         loadNamedEntities("data/namedEntities.txt");
-
-        // 2. Start the server
         startServer();
     }
 
@@ -25,21 +22,19 @@ public class ServerApp {
                 if (line.trim().isEmpty())
                     continue;
 
-                // Format:
-                // Ref#city_ro_nom#city_ro_acc#city_ro_gen#city_ro_dat#city_en_gender#city_en_nom#city_state
                 String[] tokens = line.split("#");
                 int ref = Integer.parseInt(tokens[0]);
                 String cityRoNom = tokens[1];
                 String cityRoAcc = tokens[2];
                 String cityRoGen = tokens[3];
                 String cityRoDat = tokens[4];
-                String cityEnGender = tokens[5];
-                String cityEnNom = tokens[6];
-                String cityState = (tokens.length > 7) ? tokens[7] : "";
+                String cityRoVoc = tokens[5]; // New vocative case field
+                String cityEnGender = tokens[6];
+                String cityEnNom = tokens[7];
+                String cityState = (tokens.length > 8) ? tokens[8] : "";
 
-                // Create a new City object and add it to the list
                 City cityObj = new City(ref, cityRoNom, cityRoAcc, cityRoGen, cityRoDat,
-                        cityEnGender, cityEnNom, cityState);
+                        cityRoVoc, cityEnGender, cityEnNom, cityState);
                 ALC.add(cityObj);
             }
         } catch (IOException e) {
@@ -55,19 +50,18 @@ public class ServerApp {
                 if (line.trim().isEmpty())
                     continue;
 
-                // Format:
-                // ent_ro_nom#ent_ro_acc#ent_ro_gen#ent_ro_dat#ent_en_gender#city_ref#type
                 String[] tokens = line.split("#");
                 String entRoNom = tokens[0];
                 String entRoAcc = tokens[1];
                 String entRoGen = tokens[2];
                 String entRoDat = tokens[3];
-                String entEnGender = tokens[4];
-                int cityRef = Integer.parseInt(tokens[5]);
-                String type = tokens[6];
+                String entRoVoc = tokens[4]; // New vocative case field
+                String entEnGender = tokens[5];
+                int cityRef = Integer.parseInt(tokens[6]);
+                String type = tokens[7];
 
                 NamedEntity entityObj = new NamedEntity(
-                        entRoNom, entRoAcc, entRoGen, entRoDat, entEnGender,
+                        entRoNom, entRoAcc, entRoGen, entRoDat, entRoVoc, entEnGender,
                         cityRef, type);
                 ALE.add(entityObj);
             }
@@ -82,7 +76,6 @@ public class ServerApp {
 
             while (true) {
                 Socket incoming = serverSocket.accept();
-                // For multiple clients, spawn a new thread (or use a thread pool).
                 handleClient(incoming);
             }
         } catch (IOException e) {
@@ -108,7 +101,7 @@ public class ServerApp {
                         break;
                     }
                     String response = processRequest(request);
-                    out.println(response);
+                    out.println(response + " dear Professor");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -126,9 +119,7 @@ public class ServerApp {
         String cityName = parts[1];
 
         if (keyword.equalsIgnoreCase("City")) {
-            // Show details of the city
             for (City c : ALC) {
-                // Normalize both city names before comparing
                 String normalizedCityName = removeDiacritics(c.getCityEnNom());
                 if (normalizedCityName.equalsIgnoreCase(removeDiacritics(cityName))) {
                     return c.getAllAttributes();
@@ -136,8 +127,6 @@ public class ServerApp {
             }
             return "No city found with name: " + cityName;
         } else {
-            // We assume it's a named-entity type
-            // 1) Find the city ref
             int cityRef = -1;
             for (City c : ALC) {
                 String normalizedCityName = removeDiacritics(c.getCityEnNom());
@@ -150,7 +139,6 @@ public class ServerApp {
                 return "City not found: " + cityName;
             }
 
-            // 2) Look for named entities of that type in that city
             StringBuilder sb = new StringBuilder();
             for (NamedEntity e : ALE) {
                 if (e.getCityRef() == cityRef && e.getType().equalsIgnoreCase(keyword)) {
